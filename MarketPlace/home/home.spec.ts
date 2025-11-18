@@ -26,6 +26,9 @@ test('checkt page visibulity',async({page})=>{
 })
 
 })
+
+
+
 //   test("Verify avatar if logged in OR click signup if logged out", async ({ page }) => {
   //     const home = new HomePage(page);
 
