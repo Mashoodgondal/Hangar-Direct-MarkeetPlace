@@ -47,4 +47,7 @@ export class LoginPage {
   async isLoginPageVisible() {
     await expect(this.welcomeText()).toBeVisible();
   }
+  async gotoSinupLink(){
+    await this.page.getByText('Sign up').click()
+  }
 }
