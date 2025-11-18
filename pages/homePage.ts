@@ -14,7 +14,7 @@ export class HomePage {
     await this.page.goto("https://hangardirect-github-io.vercel.app/");
   }
   async checkPageVisible(){
-    await this.page.getByText('Your one place for hangar space')
+     this.page.getByText('Your one place for hangar space')
   }
   async checkButton(){
     //  this.page.locator("button", {hasText : "Sign in"});
