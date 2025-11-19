@@ -49,7 +49,7 @@ export class SignupPage {
   successToast = () =>
     this.page.locator("text=Account created successfully");
 
-  // -------- ACTIONS -------- //
+  
 
   async fillForm(data: {
     firstName: string;
