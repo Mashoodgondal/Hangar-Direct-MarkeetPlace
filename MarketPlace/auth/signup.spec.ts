@@ -9,10 +9,10 @@ test.describe("Signup Page – Full Validation", () => {
     await login.goto()
      login.gotoSinupLink()
     const signup = new SignupPage(page);
-    // await signup.goto();
+   
     await signup.isSignupPageVisible();
   });
-  
+
   test("Empty all fields → show required errors", async ({ page }) => {
     const signup = new SignupPage(page);
   

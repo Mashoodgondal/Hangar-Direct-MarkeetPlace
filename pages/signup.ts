@@ -24,7 +24,7 @@ export class SignupPage {
 
   pageTitle = () => this.page.getByText("Get started with a free account");
 
-  // ERRORS
+  
   firstNameError = () =>
     this.page.getByText("First name can not be empty!");
   
@@ -45,7 +45,7 @@ export class SignupPage {
   confirmPasswordError = () =>
     this.page.locator("text=Password does not match");
 
-  // TOASTS
+  
   successToast = () =>
     this.page.locator("text=Account created successfully");
 
