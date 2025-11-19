@@ -48,6 +48,12 @@ export class LoginPage {
     await expect(this.welcomeText()).toBeVisible();
   }
   async gotoSinupLink(){
-    await this.page.getByText('Sign up').click()
+    // await this.page.getByText('Sign up').click()
+    // async gotoSignupLink() {
+      await this.page.getByRole("link", { name: "Sign up" }).click();
+      await this.page.waitForURL("https://hangardirect-github-io.vercel.app/signup");
+      // await this.page.waitForLoadState("networkidle"); // best!
+    }
+    
   }
-}
+// }

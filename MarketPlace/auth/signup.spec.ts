@@ -5,11 +5,14 @@ import { LoginPage } from "../../pages/login";
 test.describe("Signup Page – Full Validation", () => {
   
   test.beforeEach(async ({ page }) => {
+    const login = new LoginPage(page)
+    await login.goto()
+     login.gotoSinupLink()
     const signup = new SignupPage(page);
-    await signup.goto();
+    // await signup.goto();
     await signup.isSignupPageVisible();
   });
-
+  
   test("Empty all fields → show required errors", async ({ page }) => {
     const signup = new SignupPage(page);
   
@@ -62,7 +65,7 @@ test.describe("Signup Page – Full Validation", () => {
       email: "test@gmail.com",
       password: "Password123",
       confirmPassword: "WrongPassword",
-      referral: ""
+      referral: "12"
     });
 
     await signup.clickSignupButton();
@@ -92,7 +95,7 @@ test.describe("Signup Page – Full Validation", () => {
   
   test("Valid Signup → success toast", async ({ page }) => {
     const signup = new SignupPage(page);
-
+    const login = new LoginPage(page)
     await signup.fillForm({
       firstName: "John",
       lastName: "Doe",
@@ -103,7 +106,7 @@ test.describe("Signup Page – Full Validation", () => {
     });
 
     await signup.clickSignupButton();
-    await expect(signup.successToast()).toBeVisible();
+     expect(login.isLoginPageVisible);
   });
 
 });

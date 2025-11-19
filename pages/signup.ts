@@ -4,17 +4,17 @@ export class SignupPage {
 
   constructor(public page: Page) {}
 
-  async goto() {
-    await this.page.goto("https://hangardirect-github-io.vercel.app/signup");
-  }
+  // async goto() {
+  //   await this.page.goto("https://hangardirect-github-io.vercel.app/signup");
+  // }
 
-  // ------------ LOCATORS ------------ //
 
-  firstName = () => this.page.locator("#firstName");
-  lastName = () => this.page.locator("#lastName");
+
+  firstName = () => this.page.locator("#first_name");
+  lastName = () => this.page.locator("#last_name");
   email = () => this.page.locator("#email");
   password = () => this.page.locator("#password");
-  confirmPassword = () => this.page.locator("#confirmPassword");
+  confirmPassword = () => this.page.locator("#confirm_password");
   referral = () => this.page.locator("#referral");
 
   signupButton = () => this.page.getByRole("button", { name: "Sign Up" });
@@ -43,7 +43,7 @@ export class SignupPage {
   emailError = () => this.page.locator("text=valid email").first();
   passwordError = () => this.page.locator("text=8").first();
   confirmPasswordError = () =>
-    this.page.locator("text=Passwords do not match");
+    this.page.locator("text=Password does not match");
 
   // TOASTS
   successToast = () =>
