@@ -26,6 +26,7 @@ export class HomePage {
   async checkAvator(){
     this.avatar()
   }
+  
   async isUserLogedIn(){
     return await this.avatar().isVisible().catch(() => false);
   }

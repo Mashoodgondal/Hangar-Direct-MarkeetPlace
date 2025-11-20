@@ -10,6 +10,11 @@ test.describe("Login Page – Full Validation", () => {
     await loginPage.isLoginPageVisible();
   });
 
+  test('welcome text',async({page})=>{
+    const login = new LoginPage(page)
+   await expect(login.welcomeText()).toBeVisible()
+})
+
   test("Empty Email → show email validation error", async ({ page }) => {
     const login = new LoginPage(page);
     await login.login("", "Password123");
