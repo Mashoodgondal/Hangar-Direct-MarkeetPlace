@@ -28,33 +28,3 @@ test('checkt page visibulity',async({page})=>{
 })
 
 
-
-//   test("Verify avatar if logged in OR click signup if logged out", async ({ page }) => {
-  //     const home = new HomePage(page);
-
-//     // Step 1: Open main page
-//     await home.openHome();
-
-//     // Step 2: Check if user is already logged in
-//     const loggedIn = await home.isUserLoggedIn();
-
-//     if (loggedIn) {
-//       console.log("User is logged in → Avatar found.");
-//       await expect(home.avatar()).toBeVisible();
-//     } 
-//     else {
-//       console.log("User is NOT logged in → Signup button visible.");
-
-//       // Signup button should be visible
-//       await expect(home.signInButton()).toBeVisible();
-
-
-//       // Step 3: Click Signup and verify navigation
-//       await home.clickSignupAndGoToLogin();
-
-//       // Step 4: Verify landing page is login/signup page
-//       await expect(page.url()).toMatch('https://hangardirect-github-io.vercel.app/signin?ref=/');
-//     }
-//   });
-
-// });

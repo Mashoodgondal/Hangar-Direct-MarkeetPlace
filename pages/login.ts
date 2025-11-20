@@ -6,9 +6,7 @@ export class LoginPage {
   async goto() {
     await this.page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
   }
-
-
-
+  
   emailField = () => this.page.locator("#email");
   passwordField = () => this.page.locator("#password");
 

@@ -9,6 +9,9 @@ export class HomePage {
 
   // Stable avatar locator
   avatar = () => this.page.locator('button[aria-haspopup="menu"]');
+  
+  avatarMenuItem = (item: string) =>
+    this.page.getByRole("menuitem", { name: item });
 
   async openHome() {
     await this.page.goto("https://hangardirect-github-io.vercel.app/");
@@ -36,6 +39,16 @@ export class HomePage {
       await expect(this.page.getByText("Welcome Back")).toBeVisible()
       
     }
+  }
+  async openAvatarMenu() {
+    await this.avatar().click();
+    await expect(this.page.getByRole("menu")).toBeVisible();
+  }
+  async goToAccountPage() {
+    await this.openAvatarMenu();
+    await this.avatarMenuItem("Account").click();
+    await this.page.waitForLoadState("networkidle");
+    await expect(this.page.getByText("My Account")).toBeVisible();
   }
  
 }
