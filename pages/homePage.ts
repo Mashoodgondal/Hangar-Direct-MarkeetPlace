@@ -3,13 +3,13 @@ import { Page, expect } from "@playwright/test";
 export class HomePage {
   constructor(private page: Page) {}
 
-  // // Stable button locator even with SVG inside
+ 
   signInButton = () =>
     this.page.locator("button", { hasText: "Sign in" });
 
-  // Stable avatar locator
-  avatar = () => this.page.locator('button[aria-haspopup="menu"]');
   
+  avatar = () => this.page.locator('button[aria-haspopup="menu"]');
+
   avatarMenuItem = (item: string) =>
     this.page.getByRole("menuitem", { name: item });
 
@@ -37,7 +37,7 @@ export class HomePage {
       await this.signInButton().click();
       await this.page.waitForLoadState("networkidle");
       await expect(this.page.getByText("Welcome Back")).toBeVisible()
-      
+
     }
   }
   async openAvatarMenu() {

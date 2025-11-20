@@ -1,14 +1,19 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/homePage";
 import { AccountPage } from "../../pages/account";
+import { LoginPage } from "../../pages/login";
 
 test("Avatar → Account → My Profile/Planes", async ({ page }) => {
   const home = new HomePage(page);
   const account = new AccountPage(page);
-
+   const login = new LoginPage(page)
+ 
   await home.openHome();
+  await home.clickSignupAndGoToLogin()
+//    await login.goto()
+   await login.login('mashoodgondalofficial@gmail.com','123123123')
 
-  // Ensure logged-in user
+//   Ensure logged-in user
   if (!(await home.isUserLogedIn())) {
     throw new Error("User is not logged in. Login first before running this test.");
   }
