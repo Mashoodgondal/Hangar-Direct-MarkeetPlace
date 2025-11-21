@@ -34,6 +34,41 @@
 //     // // Step 8: Click My Profile/Planes tab
 //     // await account.openProfilePlanes();
   
+
+
+
+
+
+import { test, expect } from "@playwright/test";
+import { HomePage } from "../../pages/homePage";
+import { AccountPage } from "../../pages/account";
+import { LoginPage } from "../../pages/login";
+
+test("Avatar → Account → My Profile/Planes", async ({ page }) => {
+  const home = new HomePage(page);
+  const login = new LoginPage(page);
+  const account = new AccountPage(page);
+
+  // Step 1: open home
+  await home.openHome();
+  await home.checkPageVisible();
+
+  // Step 2: go to login page
+  await home.clickSignupAndGoToLogin();
+
+  // Step 3: login
+  await login.login("mashoodgondalofficial@gmail.com", "123123123");
+
+  // Step 4: wait for home avatar
+  await expect(home.avatar()).toBeVisible({ timeout: 8000 });
+
+  // Step 5: go to account
+  await home.goToAccountPage();
+
+  // Step 6: open "My Profile / Planes"
+  await account.openProfilePlanes();
+});
+
   
 
 
