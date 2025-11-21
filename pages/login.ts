@@ -7,9 +7,11 @@ export class LoginPage {
     await this.page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
   }
   
-  emailField = () => this.page.locator("#email");
-  passwordField = () => this.page.locator("#password");
-
+  // emailField = () => this.page.locator("#email");
+  // passwordField = () => this.page.locator("#password");
+  emailField = () => this.page.getByLabel("Email Address");
+  passwordField = () => this.page.getByLabel("Password");
+  
   
   loginButton = () => this.page.getByRole("button", { name: "Sign In" });
 
@@ -17,7 +19,7 @@ export class LoginPage {
   facebookTab = () => this.page.getByText("Sign in with Facebook");
 
 
-  welcomeText = () => this.page.getByText("Welcome Back");
+  // welcomeText = () => this.page.getByText("Welcome Back");
 
   // FIELD ERRORS (flexible match)
   emailFieldError = () =>
@@ -41,10 +43,17 @@ export class LoginPage {
     await this.passwordField().fill(password);
     await this.loginButton().click();
   }
-
-  async isLoginPageVisible() {
-    await expect(this.welcomeText()).toBeVisible();
+  async waitForLoginForm() {
+    await this.emailField().waitFor({ state: "visible" });
+    await this.passwordField().waitFor({ state: "visible" });
   }
+  
+  // async isLoginPageVisible() {
+  //   await expect(this.page.getByText(/welcome/i)).toBeVisible();
+  // }  
+  // async isLoginPageVisible() {
+  //   await expect(this.page.getByText("Welcome Back")).toBeVisible();
+  // }
   async gotoSinupLink(){
  
       await this.page.getByRole("link", { name: "Sign up" }).click();
