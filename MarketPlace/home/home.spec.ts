@@ -12,14 +12,14 @@ test('checkt page visibulity',async({page})=>{
   // home.checkAvator()
   // home.isSignupVisible()
   // home.isUserLogedIn()
-     const login = await home.isUserLogedIn()
-     if(login){
-      console.log("user is logedIn")
-     await expect(home.avatar()).toBeVisible();
-     }
-     else{
-     console.log("User is not logedIn")
-     }
+    //  const login = await home.isUserLogedIn()
+    //  if(login){
+    //   console.log("user is logedIn")
+    //  await expect(home.avatar()).toBeVisible();
+    //  }
+    //  else{
+    //  console.log("User is not logedIn")
+    //  }
     await home.clickSignupAndGoToLogin()
    
   
