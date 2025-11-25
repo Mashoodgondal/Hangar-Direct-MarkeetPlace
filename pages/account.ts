@@ -16,6 +16,15 @@
 // }
 
 
+//   // page.getByRole("tab", { name, exact: true });
+
+//   async openProfilePlanes() {
+//     await this.tab("My Profile / Planes").click();
+//     await expect(this.page.getByText("Manage fleet")).toBeVisible();
+//   }
+// }
+
+
 
 
 import { Page, expect } from "@playwright/test";
