@@ -110,36 +110,4 @@ test.describe("Signup Page – Full Validation", () => {
   });
 
 });
-
-
-
-
-
-
-
-
-// await signup.fillForm({
-  //   firstName: "John",
-  //   lastName: "Doe",
-  //   email: `auto_${Date.now()}@gmail.com`,
-  //   password: "Password123",
-  //   confirmPassword: "Password123",
-  //   referral: "12345"
-  // });
-  // await signup.fillForm({
-    //   firstName: "John",
-    //   lastName: "Doe",
-    //   email: `auto_${Date.now()}@gmail.com`,
-    //   password: "Password123",
-    //   confirmPassword: "Password123",
-    //   referral: "12345"
-    // });
-    // await signup.fillForm({
-      //   firstName: "John",
-      //   lastName: "Doe",
-      //   email: `auto_${Date.now()}@gmail.com`,
-      //   password: "Password123",
-      //   confirmPassword: "Password123",
-      //   referral: "12345"
-      // });
   
