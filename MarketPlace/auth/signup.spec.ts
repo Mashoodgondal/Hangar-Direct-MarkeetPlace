@@ -55,7 +55,7 @@ test.describe("Signup Page – Full Validation", () => {
     await signup.clickSignupButton();
     await expect(signup.passwordError()).toBeVisible();
   });
-
+    
   test("Password and Confirm Password mismatch", async ({ page }) => {
     const signup = new SignupPage(page);
 
