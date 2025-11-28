@@ -90,3 +90,15 @@ export class LoginPage {
 // }
 
 
+
+
+
+
+//   async login(email: string, password: string) {
+  //     await this.waitForLoginForm();
+  //     await this.emailField().fill(email);
+  //     await this.passwordField().fill(password);
+  //     await this.loginButton().click();
+  //   }
+  // }
+  
