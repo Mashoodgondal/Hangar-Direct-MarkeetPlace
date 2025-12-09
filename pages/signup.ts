@@ -11,6 +11,10 @@ export class SignupPage {
   // async goto() {
   //   await this.page.goto("https://hangardirect-github-io.vercel.app/signup");
   // }
+  
+  // async goto() {
+  //   await this.page.goto("https://hangardirect-github-io.vercel.app/signup");
+  // }
 
 
 
