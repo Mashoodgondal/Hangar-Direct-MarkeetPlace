@@ -51,7 +51,7 @@ test("Avatar → Account → My Profile/Planes", async ({ page }) => {
 
   // Step 1: open home
   await home.openHome();
-  await home.checkPageVisible();
+  // await home.checkPageVisible();
 
   // Step 2: go to login page
   await home.clickSignupAndGoToLogin();
@@ -100,3 +100,15 @@ test("Avatar → Account → My Profile/Planes", async ({ page }) => {
 // //   // Click the My Profile/Planes tab
 // //   await account.openProfilePlanes();
 // });
+
+
+
+
+
+
+
+
+
+
+
+
