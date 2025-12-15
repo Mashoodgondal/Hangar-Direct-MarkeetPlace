@@ -111,16 +111,3 @@ test.describe("Signup Page – Full Validation", () => {
 
 });
   
-
-
-
-
-
-
-
-
-
-
-
-
-//  expect(login.isLoginPageVisible);
