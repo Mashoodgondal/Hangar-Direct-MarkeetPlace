@@ -50,7 +50,7 @@ test.describe("Login Page – Full Validation", () => {
     const homepage = new HomePage(page)
     const login = new LoginPage(page);
     await login.login("mashoodgondalofficial@gmail.com", "123123123");
-    await homepage.checkPageVisible();
+    await homepage.checkhomePage();
   });
 
 });

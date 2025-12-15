@@ -35,6 +35,9 @@ export class HomePage {
     await this.page.getByRole("menuitem", { name: "Account" }).click();
     await expect(this.page.getByText("My Account")).toBeVisible();
   }
+  async checkhomePage(){
+    await expect(this.page.getByText('Your one place for hangar space')).toBeVisible()
+  }
 }
 
 
