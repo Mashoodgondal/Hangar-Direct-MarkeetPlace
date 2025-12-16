@@ -15,7 +15,7 @@ export class ForgotPassword{
         await expect(this.page.getByText('Reset Password')).toBeVisible()
     }
     async goBackToSignIn(){
-        await this.page.getByText('Sign in').click()
+        await this.page.locator(':text-is("Sign in")').click()
         await expect(this.page.getByText('Welcome Back')).toBeVisible()
     }
 

@@ -5,8 +5,8 @@ import { ForgotPassword } from "../../pages/forgotPassword"
 test.describe("forgot password validation",()=>{
     test.beforeEach(async({page})=>{
         const loginPage = new LoginPage(page)
-        loginPage.goto()
-        loginPage.clickForgotPassword()
+       await loginPage.goto()
+       await loginPage.clickForgotPassword()
     })
     test('check page visibulity',async({page})=>{
         const forgotPassword = new ForgotPassword(page)
@@ -17,6 +17,6 @@ test.describe("forgot password validation",()=>{
     test('goto login page',async({page})=>{
         const forgotPassword = new ForgotPassword(page)
         await forgotPassword.goBackToSignIn()
-        
+
     })
 })
