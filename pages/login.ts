@@ -54,6 +54,9 @@ export class LoginPage {
   // async isLoginPageVisible() {
   //   await expect(this.page.getByText("Welcome Back")).toBeVisible();
   // }
+  async clickForgotPassword(){
+    await this.page.getByText('Forgot Password?').click()
+  }
   async gotoSinupLink(){
  
       await this.page.getByRole("link", { name: "Sign up" }).click();

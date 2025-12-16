@@ -81,8 +81,6 @@ test.describe("Signup Page – Full Validation", () => {
     await expect(signup.facebookTab()).toBeVisible();
   });
 
-
-
   test("Go to Signup Page by clicking Sign Up link on Login Page", async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
@@ -110,4 +108,3 @@ test.describe("Signup Page – Full Validation", () => {
   });
 
 });
-  
