@@ -30,3 +30,10 @@ test.describe("forgot password validation",()=>{
 //     await forgotPassword.goBackToSignIn()
 
 // })
+
+// })
+// test('goto login page',async({page})=>{
+//     const forgotPassword = new ForgotPassword(page)
+//     await forgotPassword.goBackToSignIn()
+
+// })
