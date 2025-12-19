@@ -7,8 +7,6 @@ export class LoginPage {
     await this.page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
   }
   
-  // emailField = () => this.page.locator("#email");
-  // passwordField = () => this.page.locator("#password");
   emailField = () => this.page.getByLabel("Email Address");
   passwordField = () => this.page.getByLabel("Password");
   
@@ -43,6 +41,7 @@ export class LoginPage {
     await this.passwordField().fill(password);
     await this.loginButton().click();
   }
+
   async waitForLoginForm() {
     await this.emailField().waitFor({ state: "visible" });
     await this.passwordField().waitFor({ state: "visible" });
@@ -54,6 +53,7 @@ export class LoginPage {
   // async isLoginPageVisible() {
   //   await expect(this.page.getByText("Welcome Back")).toBeVisible();
   // }
+
   async clickForgotPassword(){
     await this.page.getByText('Forgot Password?').click()
   }
