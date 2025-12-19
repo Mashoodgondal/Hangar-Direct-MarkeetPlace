@@ -75,6 +75,13 @@ test("Avatar → Account → My Profile/Planes", async ({ page }) => {
 
 
 
+// test("Avatar → Account → My Profile/Planes", async ({ page }) => {
+//   const home = new HomePage(page);
+//   const account = new AccountPage(page);
+//    const login = new LoginPage(page)
+ 
+
+
 
 // test("Avatar → Account → My Profile/Planes", async ({ page }) => {
 //   const home = new HomePage(page);
