@@ -16,9 +16,6 @@ export class LoginPage {
   googleTab = () => this.page.getByText("Sign in with Google");
   facebookTab = () => this.page.getByText("Sign in with Facebook");
 
-
-  // welcomeText = () => this.page.getByText("Welcome Back");
-
   // FIELD ERRORS (flexible match)
   emailFieldError = () =>
     this.page.locator("text=valid email").first();
@@ -46,13 +43,6 @@ export class LoginPage {
     await this.emailField().waitFor({ state: "visible" });
     await this.passwordField().waitFor({ state: "visible" });
   }
-  
-  // async isLoginPageVisible() {
-  //   await expect(this.page.getByText(/welcome/i)).toBeVisible();
-  // }  
-  // async isLoginPageVisible() {
-  //   await expect(this.page.getByText("Welcome Back")).toBeVisible();
-  // }
 
   async clickForgotPassword(){
     await this.page.getByText('Forgot Password?').click()
@@ -92,6 +82,23 @@ export class LoginPage {
 //   }
 // }
 
+
+
+//   async login(email: string, password: string) {
+  //     await this.waitForLoginForm();
+  //     await this.emailField().fill(email);
+  //     await this.passwordField().fill(password);
+  //     await this.loginButton().click();
+  //   }
+  // }
+  
+
+
+
+
+
+
+  
 
 
 //   async login(email: string, password: string) {
