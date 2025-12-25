@@ -7,8 +7,7 @@ test.describe("Home Page – Signup or Avatar Flow", () => {
     const home = new HomePage(page)
     await home.openHome()
     await home.checkVisibility()
-    //  await home.checkbutotnVisiblity()
-    // await home.clickSignupAndGoToLogin()
+
   })
 
 })
