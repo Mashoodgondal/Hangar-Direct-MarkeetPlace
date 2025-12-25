@@ -1,30 +1,42 @@
 import { test, expect } from "@playwright/test";
 import { SignupPage } from "../../pages/signup";
 import { LoginPage } from "../../pages/login";
+import { HomePage } from "../../pages/homePage";
 
 test.describe("Signup Page – Full Validation", () => {
-  
+
+  // test.beforeEach(async ({ page }) => {
+  //   const login = new LoginPage(page)
+  //   // await login.goto()
+  //   await login.gotoSignup();
+  //   const signup = new SignupPage(page);
+
+  //   await signup.isSignupPageVisible();
+  // });
+
   test.beforeEach(async ({ page }) => {
-    const login = new LoginPage(page)
-    await login.goto()
-     login.gotoSinupLink()
-    const signup = new SignupPage(page);
-   
+    const home = new HomePage(page);
+    await home.openHome();
+
+    const login = await home.goToLoginPage();
+    const signup = await login.gotoSignup();
+
     await signup.isSignupPageVisible();
   });
 
+
   test("Empty all fields → show required errors", async ({ page }) => {
     const signup = new SignupPage(page);
-  
+
     await signup.clickSignupButton();
-  
+
     await expect(signup.firstNameError()).toBeVisible();
     await expect(signup.lastNameError()).toBeVisible();
     await expect(signup.emailRequiredError()).toBeVisible();
     await expect(signup.passwordRequiredError()).toBeVisible();
     await expect(signup.confirmPasswordRequiredError()).toBeVisible();
   });
-  
+
   test("Invalid Email Format", async ({ page }) => {
     const signup = new SignupPage(page);
     await signup.fillForm({
@@ -55,7 +67,7 @@ test.describe("Signup Page – Full Validation", () => {
     await signup.clickSignupButton();
     await expect(signup.passwordError()).toBeVisible();
   });
-    
+
   test("Password and Confirm Password mismatch", async ({ page }) => {
     const signup = new SignupPage(page);
 
@@ -72,7 +84,7 @@ test.describe("Signup Page – Full Validation", () => {
     await expect(signup.confirmPasswordError()).toBeVisible();
   });
 
-  
+
 
   test("Check Google & Facebook tabs visible", async ({ page }) => {
     const signup = new SignupPage(page);
@@ -83,14 +95,14 @@ test.describe("Signup Page – Full Validation", () => {
 
   test("Go to Signup Page by clicking Sign Up link on Login Page", async ({ page }) => {
     const login = new LoginPage(page);
-    await login.goto();
-    await login.gotoSinupLink();
+    // await login.goto();
+    await login.gotoSignup();
 
     const signup = new SignupPage(page);
     await expect(signup.pageTitle()).toBeVisible();
   });
 
-        
+
   test("Valid Signup → success toast", async ({ page }) => {
     const signup = new SignupPage(page);
     const login = new LoginPage(page)
