@@ -1,28 +1,20 @@
 import { test, expect } from "@playwright/test";
 import { SignupPage } from "../../pages/signup";
 import { LoginPage } from "../../pages/login";
-import { HomePage } from "../../pages/homePage";
+// import { HomePage } from "../../pages/homePage";
 
 test.describe("Signup Page – Full Validation", () => {
 
-  // test.beforeEach(async ({ page }) => {
-  //   const login = new LoginPage(page)
-  //   // await login.goto()
-  //   await login.gotoSignup();
-  //   const signup = new SignupPage(page);
-
-  //   await signup.isSignupPageVisible();
-  // });
-
   test.beforeEach(async ({ page }) => {
-    const home = new HomePage(page);
-    await home.openHome();
-
-    const login = await home.goToLoginPage();
-    const signup = await login.gotoSignup();
+    const login = new LoginPage(page)
+    // await login.goto()
+    await login.gotoSignup();
+    const signup = new SignupPage(page);
 
     await signup.isSignupPageVisible();
   });
+
+
 
 
   test("Empty all fields → show required errors", async ({ page }) => {
