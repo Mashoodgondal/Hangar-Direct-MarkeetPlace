@@ -90,7 +90,7 @@ test.describe("Signup Page – Full Validation", () => {
     await expect(signup.pageTitle()).toBeVisible();
   });
 
-  
+        
   test("Valid Signup → success toast", async ({ page }) => {
     const signup = new SignupPage(page);
     const login = new LoginPage(page)
