@@ -86,6 +86,27 @@
 //       "https://hangardirect-github-io.vercel.app/signup"
 //     );
 //   }
+
+//   async gotoSignup() {
+//     await this.page.getByRole("link", { name: "Sign up" }).click();
+//     await this.page.waitForURL(
+//       "https://hangardirect-github-io.vercel.app/signup"
+//     );
+//   }
+
+//   async gotoSignup() {
+//     await this.page.getByRole("link", { name: "Sign up" }).click();
+//     await this.page.waitForURL(
+//       "https://hangardirect-github-io.vercel.app/signup"
+//     );
+//   }
+
+//   async gotoSignup() {
+//     await this.page.getByRole("link", { name: "Sign up" }).click();
+//     await this.page.waitForURL(
+//       "https://hangardirect-github-io.vercel.app/signup"
+//     );
+//   }
 // }
 
 
