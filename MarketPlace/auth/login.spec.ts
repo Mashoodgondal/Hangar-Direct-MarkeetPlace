@@ -93,9 +93,6 @@
 
 
 
-
-
-
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/login";
 import { HomePage } from "../../pages/homePage";
@@ -103,50 +100,62 @@ import { HomePage } from "../../pages/homePage";
 test.describe("Login Page – Full Validation", () => {
 
   test.beforeEach(async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.goto();
+    await page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
   });
 
+  // ---------- BASIC UI ----------
   test("Login page loads successfully", async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.waitForLoginForm();
+    await expect(page.getByLabel("Email Address")).toBeVisible();
+    await expect(page.getByLabel("Password")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Sign In" })).toBeVisible();
   });
 
+  // ---------- NEGATIVE TEST CASES ----------
   test("Empty Email → show required validation", async ({ page }) => {
     const login = new LoginPage(page);
-    await login.login("", "Password123");
 
-    await expect(login.emptyEmailOrPassword()).toBeVisible();
+    await page.getByLabel("Email Address").fill("");
+    await page.getByLabel("Password").fill("Password123");
+    await page.getByRole("button", { name: "Sign In" }).click();
+
+    await expect(page.locator("text=Required")).toBeVisible();
   });
 
   test("Empty Password → show required validation", async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.login("test@gmail.com", "");
+    await page.getByLabel("Email Address").fill("test@gmail.com");
+    await page.getByLabel("Password").fill("");
+    await page.getByRole("button", { name: "Sign In" }).click();
 
-    await expect(login.emptyEmailOrPassword()).toBeVisible();
+    await expect(page.locator("text=Required")).toBeVisible();
   });
 
-  test("Invalid Email Format → show email error", async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.login("wrongemail", "Password123");
+  test("Invalid Email Format → show email validation error", async ({ page }) => {
+    await page.getByLabel("Email Address").fill("wrongemail");
+    await page.getByLabel("Password").fill("Password123");
+    await page.getByRole("button", { name: "Sign In" }).click();
 
-    await expect(login.emailFieldError()).toBeVisible();
+    await expect(page.locator("text=valid email")).toBeVisible();
   });
 
-  test("Weak Password (< 8 chars) → show password error", async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.login("test@gmail.com", "123");
+  test("Weak Password (< 8 chars) → show password validation error", async ({ page }) => {
+    await page.getByLabel("Email Address").fill("test@gmail.com");
+    await page.getByLabel("Password").fill("123");
+    await page.getByRole("button", { name: "Sign In" }).click();
 
-    await expect(login.passwordFieldError()).toBeVisible();
+    await expect(page.locator("text=8")).toBeVisible();
   });
 
-  test("Wrong Credentials → invalid credentials toast", async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.login("test@gmail.com", "WrongPass");
+  test("Wrong Credentials → invalid credentials toast appears", async ({ page }) => {
+    await page.getByLabel("Email Address").fill("test@gmail.com");
+    await page.getByLabel("Password").fill("WrongPass");
+    await page.getByRole("button", { name: "Sign In" }).click();
 
-    await expect(login.invalidToast()).toBeVisible();
+    await expect(
+      page.locator("text=Invalid login credentials")
+    ).toBeVisible();
   });
 
+  // ---------- POSITIVE TEST CASE ----------
   test("Valid Login → user lands on Home page", async ({ page }) => {
     const login = new LoginPage(page);
 
@@ -158,7 +167,8 @@ test.describe("Login Page – Full Validation", () => {
     await home.checkVisibility();
   });
 
-  test("Navigate to Signup page from Login", async ({ page }) => {
+  // ---------- NAVIGATION ----------
+  test("Navigate to Signup page from Login page", async ({ page }) => {
     const login = new LoginPage(page);
 
     await login.gotoSignup();
