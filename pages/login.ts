@@ -57,57 +57,6 @@
 // }
 
 
-// import { Page, expect } from "@playwright/test";
-// import { HomePage } from "./homePage";
-
-// export class LoginPage {
-//   constructor(private page: Page) { }
-
-//   emailField = () => this.page.getByLabel("Email Address");
-//   passwordField = () => this.page.getByLabel("Password");
-//   loginButton = () =>
-//     this.page.getByRole("button", { name: "Sign In" });
-
-//   async login(email: string, password: string): Promise<HomePage> {
-//     await this.emailField().fill(email);
-//     await this.passwordField().fill(password);
-//     await this.loginButton().click();
-
-//     await expect(
-//       this.page.getByText("Logged in successfully")
-//     ).toBeVisible();
-
-//     return new HomePage(this.page);
-//   }
-
-//   async gotoSignup() {
-//     await this.page.getByRole("link", { name: "Sign up" }).click();
-//     await this.page.waitForURL(
-//       "https://hangardirect-github-io.vercel.app/signup"
-//     );
-//   }
-
-//   async gotoSignup() {
-//     await this.page.getByRole("link", { name: "Sign up" }).click();
-//     await this.page.waitForURL(
-//       "https://hangardirect-github-io.vercel.app/signup"
-//     );
-//   }
-
-//   async gotoSignup() {
-//     await this.page.getByRole("link", { name: "Sign up" }).click();
-//     await this.page.waitForURL(
-//       "https://hangardirect-github-io.vercel.app/signup"
-//     );
-//   }
-
-//   async gotoSignup() {
-//     await this.page.getByRole("link", { name: "Sign up" }).click();
-//     await this.page.waitForURL(
-//       "https://hangardirect-github-io.vercel.app/signup"
-//     );
-//   }
-// }
 
 
 
