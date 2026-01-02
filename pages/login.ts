@@ -39,20 +39,6 @@
 //     await this.loginButton().click();
 //   }
 
-//   // ACTION
-//   async login(email: string, password: string) {
-//     await this.emailField().fill(email);
-//     await this.passwordField().fill(password);
-//     await this.loginButton().click();
-//   }
-
-//   // ACTION
-//   async login(email: string, password: string) {
-//     await this.emailField().fill(email);
-//     await this.passwordField().fill(password);
-//     await this.loginButton().click();
-//   }
-
 //   async waitForLoginForm() {
 //     await this.emailField().waitFor({ state: "visible" });
 //     await this.passwordField().waitFor({ state: "visible" });
