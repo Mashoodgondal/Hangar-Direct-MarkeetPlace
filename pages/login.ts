@@ -8,7 +8,12 @@
 //   }
 
 
-
+// export class LoginPage {
+  //   constructor(private page: Page) { }
+  
+  //   async goto() {
+  //     await this.page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
+  //   }
 
 
 
