@@ -7,6 +7,20 @@
 //     await this.page.goto("https://hangardirect-github-io.vercel.app/signin?ref=/");
 //   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   emailField = () => this.page.getByLabel("Email Address");
 //   passwordField = () => this.page.getByLabel("Password");
 
