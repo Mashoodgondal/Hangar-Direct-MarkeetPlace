@@ -57,6 +57,16 @@
 
 
 
+//   async clickForgotPassword() {
+//     await this.page.getByText('Forgot Password?').click()
+//   }
+//   async gotoSinupLink() {
+
+//     await this.page.getByRole("link", { name: "Sign up" }).click();
+//     await this.page.waitForURL("https://hangardirect-github-io.vercel.app/signup");
+
+//   }
+
 
 //   async clickForgotPassword() {
 //     await this.page.getByText('Forgot Password?').click()
