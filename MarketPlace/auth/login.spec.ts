@@ -103,3 +103,12 @@ test.describe("Login Page – Full Validation", () => {
 //     page.locator("text=Invalid login credentials")
 //   ).toBeVisible();
 // });
+// test("Wrong Credentials → invalid credentials toast appears", async ({ page }) => {
+//   await page.getByLabel("Email Address").fill("test@gmail.com");
+//   await page.getByLabel("Password").fill("WrongPass");
+//   await page.getByRole("button", { name: "Sign In" }).click();
+
+//   await expect(
+//     page.locator("text=Invalid login credentials")
+//   ).toBeVisible();
+// });
