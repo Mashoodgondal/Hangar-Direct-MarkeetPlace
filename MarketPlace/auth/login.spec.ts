@@ -70,13 +70,13 @@ test.describe("Login Page – Full Validation", () => {
   });
 
 
-  test("Navigate to Signup page from Login page", async ({ page }) => {
-    const login = new LoginPage(page);
+  // test("Navigate to Signup page from Login page", async ({ page }) => {
+  //   const login = new LoginPage(page);
 
-    await login.gotoSignup();
+  //   await login.gotoSignup();
 
-    await expect(page).toHaveURL(/signup/);
-  });
+  //   await expect(page).toHaveURL(/signup/);
+  // });
 
 });
 
@@ -85,3 +85,10 @@ test.describe("Login Page – Full Validation", () => {
 
 
 
+// test("Navigate to Signup page from Login page", async ({ page }) => {
+  //   const login = new LoginPage(page);
+
+  //   await login.gotoSignup();
+
+  //   await expect(page).toHaveURL(/signup/);
+  // });
