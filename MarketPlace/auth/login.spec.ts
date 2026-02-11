@@ -92,3 +92,11 @@ test.describe("Login Page – Full Validation", () => {
 
   //   await expect(page).toHaveURL(/signup/);
   // });
+  // test("Navigate to Signup page from Login page", async ({ page }) => {
+    //   const login = new LoginPage(page);
+  
+    //   await login.gotoSignup();
+  
+    //   await expect(page).toHaveURL(/signup/);
+    // });
+  
